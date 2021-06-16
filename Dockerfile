@@ -1,4 +1,4 @@
-FROM alpine:3.13 AS builder
+FROM alpine:3.14.0 AS builder
 
 ARG VERSION_ANSIBLE="3.0.0"
 ARG VERSION_ANSIBLE_LINT="5.0.2"
@@ -21,7 +21,7 @@ RUN pip install --no-cache-dir \
         ansible-lint==${VERSION_ANSIBLE_LINT} \
         molecule[docker]==${VERSION_MOLECULE}
 
-FROM alpine:3.13
+FROM alpine:3.14.0
 
 LABEL maintainer="Michael Maffait"
 LABEL org.opencontainers.image.source="https://github.com/Pandemonium1986/docker-alpine313"
